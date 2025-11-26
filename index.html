@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex items-center gap-10 h-dvh w-full">
+      <div class="w-[200px] h-[200px] bg-red-900 rectangle"></div>
+      <div class="w-[200px] h-[200px] bg-red-900 rounded-full circle"></div>
+      <div class="w-[200px] h-[200px] bg-red-900 square"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+      gsap.to(".rectangle", {
+        x: 200,
+        duration: 1,
+        ease: "power2.out",
+      });
+      gsap.from(".circle", {
+        opacity: 0,
+        scale: 0,
+        duration: 1,
+        delay: 0.3,
+        ease: "back.out(1.7)",
+      });
+      gsap.fromTo(
+        ".square",
+        { opacity: 0, y: -50, scale: 0.5 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          delay: 0.6,
+          ease: "power3.out",
+        }
+      );
+    </script>
+  </body>
+</html>
